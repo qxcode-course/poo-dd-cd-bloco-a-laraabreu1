@@ -17,3 +17,5 @@ outra.color = "blue"
 print(toalha.color)
 print(toalha.size)
 print(toalha.wetness)
+
+#https://classroom.github.com/a/G161n2yI
