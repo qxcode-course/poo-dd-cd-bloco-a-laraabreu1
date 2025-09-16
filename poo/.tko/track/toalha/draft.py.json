@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2025-09-16_19-37-40",
+            "content": "@@ -1,29 +0,0 @@\n-print(%22minha toalha %C3%A9 rosa.%22)\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-09-16_19-39-22",
+            "content": "@@ -23,31 +23,7 @@\n rosa\n-%22)%0Aprint(%22e tem meu nome\n .%22)\n",
+            "lines": "1"
+        },
+        {
+            "label": "2025-09-16_20-03-48",
+            "content": "@@ -21,8 +21,33 @@\n %C3%A9 rosa%22)\n+%0Aprint(%22e tem meu nome.%22)\n",
+            "lines": "2"
+        },
+        {
+            "label": "2025-09-16_20-03-58",
+            "content": "@@ -1,234 +1,28 @@\n-class Towel:%0A    def __init__(self):%0A        self.color = %22red%22%0A        self.size = %22p%22%0A        self.wetness = 0%0A%0Atoalha = Towel()%0Aprint(toalha.color)%0Atoalha.color = %22white%22%0Aprint(toalha.color)%0Aprint(toalha.size)%0Aprint(toalha.wetness\n+print(%22minha toalha %C3%A9 rosa%22\n )\n",
+            "lines": "1"
+        },
+        {
+            "label": "2025-09-16_20-10-13",
+            "content": "@@ -31,45 +31,10 @@\n self\n-, color: str, size: str): #construtor\n+):\n %0A   \n@@ -60,19 +60,8 @@\n red%22\n- #atributos\n %0A   \n@@ -111,95 +111,23 @@\n  0%0A%0A\n-#variavel ou referencia%0Atoalha = Towel(%22green%22, %22g%22) #objetos%0Atoalha = Towel(%22red%22, %22p%22\n+toalha = Towel(\n )%0Apr\n",
+            "lines": "12"
+        },
+        {
+            "label": "2025-09-16_20-19-08",
+            "content": "@@ -157,108 +157,8 @@\n  0%0A%0A\n-    def __str__(self) :%0A        return f%22color: %7Bself.color%7D, tam:%7Bself.size%7D, umi:%7Bself.wetness%7D%22%0A%0A\n #var\n@@ -246,23 +246,8 @@\n p%22)%0A\n-outra = toalha%0A\n prin\n@@ -262,16 +262,16 @@\n .color)%0A\n+\n toalha.c\n@@ -289,29 +289,8 @@\n te%22%0A\n-outra.color = %22blue%22%0A\n prin\n",
+            "lines": "14"
+        },
+        {
+            "label": "2025-09-16_20-21-46",
+            "content": "class Towel:\n    def __init__(self, color: str, size: str): #construtor\n        self.color = \"red\" #atributos\n        self.size = \"p\"\n        self.wetness = 0\n\n    def __str__(self) :\n        return f\"color: {self.color}, tam:{self.size}, umi:{self.wetness}\"\n\n#variavel ou referencia\ntoalha = Towel(\"green\", \"g\") #objetos\ntoalha = Towel(\"red\", \"p\")\noutra = toalha\nprint(toalha.color)\ntoalha.color = \"white\"\noutra.color = \"blue\"\nprint(toalha.color)\nprint(toalha.size)\nprint(toalha.wetness)",
+            "lines": "19"
+        }
+    ]
+}
