@@ -1,13 +1,10 @@
-
-
-
-class Towel:
-    def __init__(self, color: str, size: str): #construtor: padrao para definir que aquele metodo eh o construtor
-        self.color = "red" #atributos
-        self.size = "p"
+class Towel:    #this
+    def __init__(self, color: str, size: str): # constructor
+        self.color: str = color # atributos
+        self.size: str = size
         self.wetness: int = 0
 
-    def dry(self, amount:int) -> None:  #amount: quantidade de agua
+    def dry(self, amount: int) -> None:
         self.wetness += amount
         if self.wetness >= self.getMaxWetness():
             print("toalha encharcada")
@@ -28,29 +25,27 @@ class Towel:
             return 30
         return 0
 
-    def __str__(self) :  #transforma em texto, equivalente ao "toString"
-        return f"color: {self.color}, tam:{self.size}, umidade:{self.wetness}"  #return: devolve para quem solicitou
+    def __str__(self) -> str: # toString
+        return f"Cor:{self.color}, Tam:{self.size}, Umidade:{self.wetness}"
+    
 
-#variavel ou referencia
-minha: Towel = Towel("red", "M")
-toalha = Towel("green", "g") #objetos
-toalha = Towel("red", "p")
-outra = toalha
-print(toalha.color)
-toalha.color = "white"
-outra.color = "blue"
-print(toalha.color)
-print(toalha.size)
-print(toalha.wetness)
+def main(): #2.
+    toalha = Towel("", "")  #3. objeto manipulado
+    while True: #4. loop infinito
+        line: str = input() #5. entrada de linha
+        args: list[str] = line.split(" ") #6. lista de palavra
+        if args[0] == "end": #fim da execuçao
+            break
+        elif args[0] == "new": #color size
+            color = args[1]
+            size = args[2]
+            toalha = Towel(color, size)
+        elif args[0] == "show":
+            print(toalha)
+        elif args[0] == "dry": #amount
+            amount: int = int(args[1])
+            toalha.dry(amount)
+        else: #7. comando nao encontrado
+            print("fail: comando invalido")
 
-doguito = Towel("velha", "M")  #toalha foi criada aqui
-print(doguito)
-doguito.dry(3)
-print(doguito)
-doguito.dry(15)
-doguito.dry(10)
-print(doguito)
-
-
-
-#https://classroom.github.com/a/G161n2yI
+main()
