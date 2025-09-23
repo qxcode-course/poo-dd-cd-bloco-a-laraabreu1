@@ -13,7 +13,7 @@ class Towel:    #this
     def isDry(self) -> bool:
         return self.wetness == 0
     
-    def wringOut(self) -> None:
+    def secar(self) -> None:
         self.wetness = 0
 
     def getMaxWetness(self) -> int:
@@ -26,26 +26,29 @@ class Towel:    #this
         return 0
 
     def __str__(self) -> str: # toString
-        return f"Cor:{self.color}, Tam:{self.size}, Umidade:{self.wetness}"
+        return f"Cor: {self.color}, Tamanho: {self.size}, Umidade: {self.wetness}"
     
 
 def main(): #2.
     toalha = Towel("", "")  #3. objeto manipulado
     while True: #4. loop infinito
         line: str = input() #5. entrada de linha
+        print("$" + line)
         args: list[str] = line.split(" ") #6. lista de palavra
         if args[0] == "end": #fim da execuçao
             break
-        elif args[0] == "new": #color size
+        elif args[0] == "criar": #color size
             color = args[1]
             size = args[2]
             toalha = Towel(color, size)
-        elif args[0] == "show":
+        elif args[0] == "mostrar":
             print(toalha)
-        elif args[0] == "dry": #amount
+        elif args[0] == "seca":
+            print("sim" if toalha.isDry() else "nao")
+        elif args[0] == "enxugar": #amount
             amount: int = int(args[1])
             toalha.dry(amount)
         else: #7. comando nao encontrado
-            print("fail: comando invalido")
+            print("end")
 
 main() #1.
