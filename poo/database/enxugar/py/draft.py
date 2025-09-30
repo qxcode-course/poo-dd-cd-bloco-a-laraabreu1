@@ -13,7 +13,7 @@ class Towel:    #this
     def isDry(self) -> bool:
         return self.wetness == 0
     
-    def secar(self) -> None:
+    def wringOut(self) -> None:
         self.wetness = 0
 
     def getMaxWetness(self) -> int:
@@ -48,7 +48,11 @@ def main(): #2.
         elif args[0] == "enxugar": #amount
             amount: int = int(args[1])
             toalha.dry(amount)
+        elif args[0] == "torcer":
+            toalha.wringOut()
         else: #7. comando nao encontrado
-            print("end")
+            print("fail: comando invalido")
 
 main() #1.
+
+#git add poo/database/enxugar
