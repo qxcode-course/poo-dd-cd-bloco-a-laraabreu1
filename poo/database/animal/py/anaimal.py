@@ -1,28 +1,25 @@
 class Animal:
-    def __init__(self, species: str, sound: str):
+    def _init_(self, species: str, sound: str):
         self.species: str = species
-        self.sound: int = sound
+        self.sound: str = sound
         self.age: int = 0
-
-    def __str__(self) -> str: # toString
-        return f"{self.species}:{self.age}:{self.sound}"
-
-    def ageBy(self, amount: int) -> None:
-        if self.age >= 4:
-            print(f"warning: {self.species} morreu")
-            return
+    def grow(self, amount: int) -> None:
         self.age += amount
         if self.age >= 4:
-            self.age = 4
             print(f"warning: {self.species} morreu")
-    
-    def makeSound(self) -> str:
+    def growMax(self) -> int:
+        if self.age > 4:
+            self.age = 4
+        return 4
+    def makeSound(self) -> None:
         if self.age == 0:
-            return("---") #filhote
+            print("---")
         elif self.age >= 4:
-            return("RIP")
+            print("RIP")
         else:
-            return(self.sound)
+            print(self.sound)
+    def _str_(self):
+        return f"{self.species}:{self.age}:{self.sound}"
     
 def main():
     animal = Animal("", "")
@@ -40,10 +37,12 @@ def main():
             print(animal)
         elif args[0] == "grow":
             amount: int = int(args[1])
-            animal.ageBy(amount)
+            animal.grow(amount)
+            animal.growMax()
         elif args[0] == "noise":
-            print(animal.makeSound())
-        else:
-             print("fail: comando invalido")
-
+            animal.makeSound()
+    
 main()
+
+#inicio: 11h40
+#termino: 15h50
